@@ -1,0 +1,167 @@
+html {
+    box-sizing: border-box;
+}
+
+*,*::after, *::after {
+    box-sizing: inherit;
+}
+:root {
+    --background-color : #171717;
+    --secondary-color : #0c0a09;
+    --text-color: #f4f4f5;
+    --backdrop: rgba(0, 0, 0, 0.8);
+}
+body {
+    font-size: 62.5%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Roboto", serif;
+}
+
+table {
+    border: 1px solid #000;
+    font-size: 2rem;
+}
+td, th {
+    border: 1px solid #000;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Main content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+.container h1 {
+    font-size: 2rem;
+}
+.container > button {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: none;
+}
+.container > button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: all ease .3s;
+}
+/* Dialog */
+#modal {
+    position: relative;
+    width: 20rem;
+    height: 30rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+#modal::backdrop {
+    background-color: var(--backdrop);
+}
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#form-books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#form-books > button{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+#form-books > button:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: 1px solid var(--background-color);
+    transition: all ease .3s;
+}
+#form-books > h2 {
+    font-size: 1.5rem;
+}
+.dialog-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.dialog-label > label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.dialog-label > input {
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    height: 2rem ;
+    width: 10rem;
+    padding: 0 1rem;
+}
+.dialog-label:last-of-type{
+    flex-direction: row;
+    align-items: center;
+    accent-color: var(--background-color);
+}
+.dialog-label:last-of-type {
+    width: 2rem
+}
+/* Books container */
+#books-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 80rem;
+}
+#books-container > div {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    width: 15rem;
+    height: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+#books-container h3 {
+    font-size: 1.2rem;
+}
+#books-container p {
+    font-size: 0.9rem;
+}
+#books-container > div > div {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+#books-container > div > div > button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+#books-container > div > div > button:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: 1px solid var(--background-color);
+    transition: all ease .3s;
+}

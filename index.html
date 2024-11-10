@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalizer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Add your favourite Book</h1>
+            <button id="add-book">Add Book</button>
+            <dialog id="modal">
+                <button id="close-modal">X</button>
+                <form id="form-books">
+                    <h2>Add Book</h2>
+                    <div class="dialog-label">
+                        <label for="titleBook">Title</label>
+                        <input type="text" name="titleBook" id="titleBook">
+                    </div>
+                    
+                    <div class="dialog-label">
+                        <label for="authorBook">Author</label>
+                        <input type="text" name="authorBook" id="authorBook">
+                    </div class="dialog-label">
+
+                    <div class="dialog-label">
+                        <label for="pagesBook">Pages</label>
+                        <input type="number" name="pagesBook" id="pagesBook">
+                    </div>
+
+                    <div class="dialog-label">
+                        <label for="readBook">Read</label>
+                        <input type="checkbox" name="readBook" id="readBook">
+                    </div>
+
+                    <button id="add-book-modal">Add Book</button>
+                </form>
+            </dialog>
+        </div>
+        <div id="books-container">
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
