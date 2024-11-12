@@ -13,7 +13,7 @@ class Book {
         this._pages = pages;
         this._read = read === "on";
     }
-    // Getters
+    // Getters y Setters
     get title() {
         return this._title;
     }
