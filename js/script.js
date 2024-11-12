@@ -4,9 +4,36 @@ const modal = document.querySelector("#modal");
 const addBookCloseModal = document.querySelector("#add-book-modal");
 const formBooks = document.querySelector("#form-books");
 const closeModal = document.querySelector("#close-modal");
-const allInputs = document.querySelectorAll("input");
 const myLibrary = [];
 
+class Book {
+    constructor(title, author, pages, read) {
+        this._title = title;
+        this._author = author;
+        this._pages = pages;
+        this._read = read === "on";
+    }
+    // Getters
+    get title() {
+        return this._title;
+    }
+
+    get author() {
+        return this._author;
+    }
+
+    get pages() {
+        return this._pages;
+    }
+
+    get read() {
+        return this._read;
+    }
+
+    set read(value) {
+        this._read = value;
+    }
+}
 
 addBook.addEventListener("click", () => {
     modal.showModal();
@@ -34,19 +61,11 @@ formBooks.addEventListener("submit", (e) => {
     clearAllInputs();
 })
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read === "on";
-}
 
 function addBookLibrary(title, author, pages, read) {
-    let book = new Book(title, author, pages, read);
+    const book = new Book(title, author, pages, read);
     myLibrary.push(book);
-    console.log(myLibrary);
 };
-
 
 
 function render() {
@@ -71,19 +90,19 @@ function render() {
         div.appendChild(divButtons);
 
         const readButton = document.createElement("button");
-        readButton.textContent = "Read";
+        readButton.textContent = book.read ? "Not Read" : "Read";
         divButtons.appendChild(readButton);
         readButton.addEventListener("click", ()=> {
             book.read = !book.read;
-            render();
+            readButton.textContent = book.read ? "Not Read" : "Read";
+            readP.textContent = `Read: ${book.read ? "Read": "Not Read"}`;
         })
 
-        const delateButon = document.createElement("button");
-        
-        delateButon.textContent = "Delete Book";
-        divButtons.appendChild(delateButon);
-        delateButon.addEventListener("click", () => {
-            myLibrary.splice(-1);
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete Book";
+        divButtons.appendChild(deleteButton);
+        deleteButton.addEventListener("click", () => {
+            myLibrary.splice(index, 1);
             render();
         })
 
